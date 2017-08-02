@@ -9,18 +9,18 @@ import App from './App';
 
 const rootEle = document.getElementById('root');
 const render = (Component) => {
-	ReactDOM.render(
-		<AppContainer>
-			<Component></Component>
-		</AppContainer>,
-		rootEle
-	);
+  ReactDOM.render(
+    <AppContainer>
+      <Component></Component>
+    </AppContainer>,
+    rootEle
+  );
 };
 
 render(App);
 
 if (module.hot) {
-	module.hot.accept('./App', () => {
-		render(App);
-	});
+  module.hot.accept('./App', () => {
+    render(App);
+  });
 }

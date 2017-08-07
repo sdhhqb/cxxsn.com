@@ -24,6 +24,8 @@ module.exports = {
     	"import/no-extraneous-dependencies": 0,
     	"react/self-closing-comp": 0,
     	"no-var": 0,
+        "react/prop-types": 0,
+        "jsx-a11y/no-static-element-interactions": 0,
     	
     	"no-unused-vars": 1,
     	"eol-last": 1

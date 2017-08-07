@@ -1,7 +1,9 @@
 const path = require('path');
 const webpack = require('webpack');
+const CleanWebpackPlugin = require('clean-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const ChunkManifestPlugin = require('chunk-manifest-webpack-plugin');
 
 module.exports = {
   entry: {
@@ -11,9 +13,9 @@ module.exports = {
 
   output: {
     path: path.join(__dirname, 'dist'),
-    publicPath: '/abc/def/',
-    filename: 'js/[name].[hash].js',
-    chunkFilename: "js/[id].bundle.[hash].js"
+    publicPath: '/',
+    filename: 'js/[name].[chunkhash].js',
+    chunkFilename: "js/[id].bundle.[chunkhash].js"
   },
 
   module: {
@@ -34,12 +36,14 @@ module.exports = {
 
       {
         test: /\.(png|jpg|woff|woff2|eot|ttf|svg)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
-        loader: 'url-loader?limit=512&&name=image/src/[name].[ext]?[hash]'
+        loader: 'url-loader?limit=512&&name=image/css/[name].[ext]?[hash]'
       }
     ]
   },
 
   plugins: [
+    new CleanWebpackPlugin(['dist'], {exclude: ['image']}),
+
     new webpack.DefinePlugin({
       'process.env.NODE_ENV': JSON.stringify('production')
     }),
@@ -54,6 +58,12 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: './src/template.html',
       inject: 'body'
+    }),
+
+    new ChunkManifestPlugin({
+      filename: 'manifest.json',
+      manifestVariable: 'webpackManifest',
+      inlineManifest: false
     })
 
   ]

@@ -3,7 +3,6 @@ const webpack = require('webpack');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const ChunkManifestPlugin = require('chunk-manifest-webpack-plugin');
 
 module.exports = {
   entry: {
@@ -53,18 +52,18 @@ module.exports = {
       minChunks: Infinity
     }),
 
+    new webpack.optimize.CommonsChunkPlugin({
+      name: 'runtime'
+    }),
+
+    new webpack.HashedModuleIdsPlugin(),
+
     new ExtractTextPlugin({filename: 'style.[contenthash].css'}),
 
     new HtmlWebpackPlugin({
       template: './src/template.html',
       inject: 'body'
     }),
-
-    new ChunkManifestPlugin({
-      filename: 'manifest.json',
-      manifestVariable: 'webpackManifest',
-      inlineManifest: false
-    })
 
   ]
 

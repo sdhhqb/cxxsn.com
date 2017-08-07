@@ -1,6 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { AppContainer } from 'react-hot-loader';
+
+// IE Promise
+import 'core-js/fn/promise';
+// IE object.assign
+import 'core-js/fn/object/assign';
+//polyfill
+import "whatwg-fetch";
+
 import App from './App';
 
 // 热加载参考

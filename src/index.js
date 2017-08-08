@@ -6,7 +6,7 @@ import { AppContainer } from 'react-hot-loader';
 import 'core-js/fn/promise';
 // IE object.assign
 import 'core-js/fn/object/assign';
-//polyfill
+// polyfill
 import "whatwg-fetch";
 
 import App from './App';

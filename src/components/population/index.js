@@ -7,8 +7,7 @@ class Population extends React.Component {
     super(props);
 
     this.state = {
-      info: 'population',
-
+      info: 'population chart',
     };
   }
 

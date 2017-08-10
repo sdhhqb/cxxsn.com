@@ -8,6 +8,7 @@
     "dev-no-lint": "webpack-dev-server --config webpack.config.no-lint.js",
     "lint": "eslint ./src",
     "build": "webpack --config webpack.production.config.js --profile --json > stats.json",
+    "build-github": "webpack --config webpack.production.config.js --env.github",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -49,6 +50,7 @@
     "react-hot-loader": "^3.0.0-beta.7",
     "sass-loader": "^6.0.6",
     "style-loader": "^0.18.2",
+    "uglifyjs-webpack-plugin": "^0.4.6",
     "url-loader": "^0.5.9",
     "webpack": "^3.4.1",
     "webpack-dev-server": "^2.6.1"

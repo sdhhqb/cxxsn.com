@@ -52,7 +52,7 @@ module.exports = function(env, argv) {
     },
 
     plugins: [
-      new CleanWebpackPlugin(['docs'], {exclude: ['image', 'lib', 'favicon.ico']}),
+      new CleanWebpackPlugin(['docs'], {exclude: ['image', 'lib', '404.html', 'favicon.ico']}),
 
       new webpack.DefinePlugin({
         'process.env.NODE_ENV': JSON.stringify('production')
@@ -71,7 +71,7 @@ module.exports = function(env, argv) {
 
       new ExtractTextPlugin({filename: 'style.[contenthash].css'}),
 
-      new UglifyJSPlugin(),
+      // new UglifyJSPlugin(),
 
       new HtmlWebpackPlugin({
         template: tmpFile,

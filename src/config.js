@@ -8,8 +8,8 @@ let appConf = {
   // 路由根路径
   routeRootPath: '/'
 };
-if (location.host.match(/sdhhqb\.github\.io/)) {
-  appConf.contextPath == '/cxxsn_com/';
+if (location.pathname.match(/^\/cxxsn_com/)) {
+  appConf.contextPath === '/cxxsn_com/';
   appConf.routeRootPath = '/cxxsn_com/';
 }
 window.AppConf = appConf;

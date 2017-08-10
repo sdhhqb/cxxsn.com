@@ -1,4 +1,7 @@
 /node_modules
 /build
-/dist
+/dist/*
+!/dist/image
+!/dist/lib
 npm-debug.log
+stats.json

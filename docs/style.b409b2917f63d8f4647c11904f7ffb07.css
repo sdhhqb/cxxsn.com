@@ -1,0 +1,62 @@
+@charset "UTF-8";
+body, h1, h2, h3, h4, h5, h6, hr, p, blockquote, dl, dt, dd, ul, ol, li, pre, form, fieldset, legend, button, input, textarea, th, td {
+  margin: 0;
+  padding: 0; }
+
+ul, li {
+  list-style: none; }
+
+html {
+  height: 100%;
+  font-size: 100px;
+  font-weight: lighter; }
+
+* {
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box; }
+
+body {
+  height: 100%;
+  font-family: Arial,"Microsoft YaHei","\5B8B\4F53";
+  font-size: 14px;
+  background-color: #dfdfdf; }
+
+#root {
+  min-width: 1024px; }
+
+/*通用基本样式*/
+.fl {
+  float: left; }
+
+.fr {
+  float: right; }
+
+.dib {
+  display: inline-block; }
+
+.hide {
+  display: none !important; }
+.navs {
+  height: 32px;
+  line-height: 32px;
+  background-color: #333;
+  color: #fff; }
+  .navs > a {
+    margin: 0 5px;
+    color: #fff; }
+  .navs > .xxx {
+    background: url(/image/css/test.jpg?cff9d51401b451be49860881d1abb668) center no-repeat;
+    background-size: 100%; }
+.population {
+  height: 100%; }
+  .population > .info {
+    height: 30px; }
+  .population > .chart-wrapper {
+    width: 80%;
+    margin: 0 auto;
+    background-color: #233247; }
+  .population .chart {
+    width: 100%;
+    height: 600px;
+    margin: 0 auto; }

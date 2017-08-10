@@ -9,6 +9,7 @@ import 'core-js/fn/object/assign';
 // polyfill
 import "whatwg-fetch";
 
+import './config';
 import App from './App';
 
 // 热加载参考

@@ -1,4 +1,4 @@
-var populationData = [
+const populationData = [
   { "year": 1929, "population": 5045743 },
   { "year": 1930, "population": 6499332 },
   { "year": 1931, "population": 5792092 },
@@ -88,3 +88,5 @@ var populationData = [
   { "year": 2015, "population": 16550000 },
   { "year": 2016, "population": 17860000 }
 ];
+
+export default populationData;

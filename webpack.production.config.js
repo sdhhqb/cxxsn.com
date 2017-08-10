@@ -11,7 +11,7 @@ module.exports = {
   },
 
   output: {
-    path: path.join(__dirname, 'dist'),
+    path: path.join(__dirname, 'docs'),
     publicPath: '/',
     filename: 'js/[name].[chunkhash].js',
     chunkFilename: "js/[id].bundle.[chunkhash].js"
@@ -41,7 +41,7 @@ module.exports = {
   },
 
   plugins: [
-    new CleanWebpackPlugin(['dist'], {exclude: ['image']}),
+    new CleanWebpackPlugin(['docs'], {exclude: ['image', 'lib', 'favicon.ico']}),
 
     new webpack.DefinePlugin({
       'process.env.NODE_ENV': JSON.stringify('production')

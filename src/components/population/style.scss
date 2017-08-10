@@ -1,0 +1,17 @@
+.population {
+  height: 100%;
+
+  >.info {
+    height: 30px;
+  }
+  >.chart-wrapper {
+    width: 80%;
+    margin: 0 auto;
+    background-color: #233247;
+  }
+  .chart {
+    width: 100%;
+    height: 600px;
+    margin: 0 auto;
+  }
+}

@@ -19,6 +19,7 @@ class Nav extends React.Component {
     return (
       <div className="navs">
         <Link to="/">home</Link>
+        <Link to="/population">population</Link>
         <Link to="/test">test</Link>
         <span className="xxx" onClick={this.manualRedirect}>xxx</span>
       </div>

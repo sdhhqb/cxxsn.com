@@ -51,12 +51,17 @@ module.exports = {
     "no-unused-expressions": 0,
     "func-names": 0,
     "react/no-array-index-key": 0,
+    "import/no-webpack-loader-syntax": 0,
+    "import/no-unresolved": 0,
+    "import/extensions": 0,
+    "arrow-parens": 0,
 
     "no-unused-vars": 1,
     "eol-last": 1
   },
   
   "globals": {
-    "AppConf": true
+    "AppConf": true,
+    "echarts": true
   }
 };

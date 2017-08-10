@@ -17,7 +17,7 @@ module.exports = function(env, argv) {
 
   return {
     entry: {
-      vendor: ['react', 'react-dom', 'react-router', 'react-router-dom'],
+      vendor: ['react', 'react-dom', 'react-router', 'react-router-dom', 'whatwg-fetch'],
       app: './src/index.js'
     },
 

@@ -1,10 +1,17 @@
 // 全局配置
 let appConf = {
   info: 'app configure',
-  apiPath: '',
-  contextPath: '',
-  routeRootPath: ''
+  // 接口根路径
+  apiPath: '/',
+  // 引用静态文件根路径
+  contextPath: '/',
+  // 路由根路径
+  routeRootPath: '/'
 };
+if (location.host.match(/sdhhqb\.github\.io/)) {
+  appConf.contextPath == '/cxxsn_com/';
+  appConf.routeRootPath = '/cxxsn_com/';
+}
 window.AppConf = appConf;
 
 function setSize() {

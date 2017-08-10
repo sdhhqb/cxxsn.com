@@ -23,13 +23,15 @@ class App extends Component {
   }
 
   render() {
+    let routeRootPath = AppConf.routeRootPath;
+
     return (
       <Router>
         <div className="container">
-          <Route path="/" component={Nav}></Route>
-          <Route exact path="/" component={Home}></Route>
-          <Route exact path="/population" component={Population}></Route>
-          <Route path="/test" component={TestLazy}></Route>
+          <Route path={`${routeRootPath}`} component={Nav}></Route>
+          <Route exact path={`${routeRootPath}home`} component={Home}></Route>
+          <Route exact path={`${routeRootPath}population`} component={Population}></Route>
+          <Route path={`${routeRootPath}test`} component={TestLazy}></Route>
         </div>
       </Router>
     );

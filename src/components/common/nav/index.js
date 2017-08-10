@@ -12,15 +12,17 @@ class Nav extends React.Component {
   }
 
   manualRedirect() {
-    this.props.history.push('/test');
+    this.props.history.push(AppConf.routeRootPath + 'test');
   }
 
   render() {
+    let routeRootPath = AppConf.routeRootPath;
+
     return (
       <div className="navs">
-        <Link to="/">home</Link>
-        <Link to="/population">population</Link>
-        <Link to="/test">test</Link>
+        <Link to={`${routeRootPath}home`}>home</Link>
+        <Link to={`${routeRootPath}population`}>population</Link>
+        <Link to={`${routeRootPath}test`}>test</Link>
         <span className="xxx" onClick={this.manualRedirect}>xxx</span>
       </div>
     );

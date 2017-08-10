@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import createHistory from 'history/createBrowserHistory';
 import {
   Router,
   Route
@@ -11,8 +10,6 @@ import Home from './components/home';
 import Population from './components/population';
 // lazy load 测试
 import TestLazy from './components/test/lazy';
-
-const history = createHistory();
 
 class App extends Component {
   constructor(props) {
@@ -35,7 +32,7 @@ class App extends Component {
         let pathname = search[1].split('=')[1];
         pathname = decodeURIComponent(pathname);
         console.log('redirect to : ', pathname);
-        history.replace(pathname);
+        this.props.history.replace(pathname);
       }
     }
   }
@@ -44,7 +41,7 @@ class App extends Component {
     let routeRootPath = AppConf.routeRootPath;
 
     return (
-      <Router history={history}>
+      <Router history={this.props.history}>
         <div className="container">
           <Route path={`${routeRootPath}`} component={Nav}></Route>
           <Route exact path={`${routeRootPath}home`} component={Home}></Route>

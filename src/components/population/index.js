@@ -9,10 +9,18 @@ class Population extends React.Component {
     this.state = {
       info: 'population chart',
     };
+
+    this.resizeChart = this.resizeChart.bind(this);
   }
 
   componentDidMount() {
     this.drawChart();
+    window.addEventListener('resize', this.resizeChart);
+  }
+
+  componentWillUnmount() {
+    echarts.dispose(this.chartDom);
+    window.removeEventListener('resize', this.resizeChart);
   }
 
   // 获取图表option
@@ -103,6 +111,11 @@ class Population extends React.Component {
     return option;
   }
 
+  // 取得图表实例对象
+  getChartObj() {
+    return echarts.getInstanceByDom(this.chartDom) || echarts.init(this.chartDom);
+  }
+
   // 画图
   drawChart() {
     let axisData = [];
@@ -116,8 +129,15 @@ class Population extends React.Component {
     option.xAxis.data = axisData;
     option.series[0].data = seriesData;
 
-    let myChart = echarts.init(document.getElementById('population_chart'));
+    let myChart = echarts.init(this.chartDom);
     myChart.setOption(option);
+  }
+
+  // 图表resize
+  resizeChart() {
+    setTimeout(() => {
+      this.getChartObj().resize();
+    }, 300);
   }
 
   render() {
@@ -125,7 +145,7 @@ class Population extends React.Component {
       <div className="population">
         <div className="info"></div>
         <div className="chart-wrapper">
-          <div id="population_chart" className="chart"></div>
+          <div ref={(chart) => { this.chartDom = chart; }} id="population_chart" className="chart"></div>
         </div>
       </div>
     );

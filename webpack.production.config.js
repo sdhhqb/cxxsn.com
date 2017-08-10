@@ -71,7 +71,7 @@ module.exports = function(env, argv) {
 
       new ExtractTextPlugin({filename: 'style.[contenthash].css'}),
 
-      // new UglifyJSPlugin(),
+      new UglifyJSPlugin(),
 
       new HtmlWebpackPlugin({
         template: tmpFile,
